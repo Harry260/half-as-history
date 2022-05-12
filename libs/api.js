@@ -34,6 +34,7 @@ const API = {
 			var processed = [];
 			postListObj.forEach(async (element, index, array) => {
 				var { year, snippet, article } = element;
+				element.category = category;
 				await sleep(100);
 				try {
 					var media = new Media({

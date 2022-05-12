@@ -53,7 +53,7 @@ const Twitter = {
 	},
 	resolveMediaIDs: async function (obj) {
 		return new Promise(async function (resolve) {
-			tempTwitterObject = {};
+			var tempTwitterObject = {};
 			var twitterObject = [];
 			var resolved = false;
 			for (let i = 0; i < obj.length; i++) {
@@ -64,7 +64,7 @@ const Twitter = {
 					}
 					break;
 				} else {
-					var { image, snippet, article, year } = obj[i];
+					var { image, snippet, article, year, category } = obj[i];
 
 					console.log("Working on Post: " + article);
 
