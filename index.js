@@ -1,6 +1,6 @@
 import { postTweet } from "./utils/postThread.js";
 import { fileURLToPath } from "url";
-import getCategory from "./utils/getCategory.js";
+//import getCategory from "./utils/getCategory.js";
 
 import express from "express";
 import path from "path";
@@ -20,7 +20,7 @@ app.get(["/post/:platform"], (req, res) => {
 		? [req.params.platform]
 		: availablePlatforms;
 
-	var category = getCategory();
+	var category = "events"; //getCategory();
 	platforms.forEach(async (platform) => {
 		if (platform === "twitter") {
 			var tw = await postTweet(category);

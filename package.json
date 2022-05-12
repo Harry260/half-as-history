@@ -1,7 +1,7 @@
 {
   "name": "half-as-history",
   "version": "1.0.0",
-  "description": "Twitter bot that posts today-in-history!",
+  "description": "A simple bot which share the events, that happened years ago, but this day!",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -8,7 +8,7 @@
 </h1>
 
 <h4 align="center">
-    A simple twitter bot which share the events, that happend years ago, but this day! <a href="https://twitter.com/halfashistory">click here</a> 
+    A simple bot which share the events, that happened years ago, but this day! <a href="https://twitter.com/halfashistory">click here</a> 
 </h4>
 
 <br>
