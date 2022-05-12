@@ -1,7 +1,8 @@
 import { TwitterApi } from "twitter-api-v2";
+import { sortArray } from "../utils/sort.js";
+import moment from "moment";
 import getBuffer from "../utils/getImageBuffer.js";
 import "dotenv/config";
-import { sortArray } from "../utils/sort.js";
 
 const {
 	APP_KEY,
@@ -57,15 +58,25 @@ const Twitter = {
 			var twitterObject = [];
 			var resolved = false;
 			for (let i = 0; i < obj.length; i++) {
-				if (twitterObject.length + 2 === parseInt(MAX_TWEET)) {
+				var { image, snippet, article, year, category } = obj[i];
+
+				if (
+					Object.keys(tempTwitterObject).length + 2 ===
+					parseInt(MAX_TWEET)
+				) {
 					if (!resolved) {
-						resolve(twitterObject);
+						sortArray(Object.keys(tempTwitterObject)).forEach(
+							(key) => {
+								twitterObject.push(tempTwitterObject[key]);
+							}
+						);
+						resolve(
+							Twitter._addStarterText(twitterObject, category)
+						);
 						resolved = true;
 					}
 					break;
-				} else {
-					var { image, snippet, article, year, category } = obj[i];
-
+				} else if (!resolved) {
 					console.log("Working on Post: " + article);
 
 					var buffer = await getBuffer(image);
@@ -88,11 +99,29 @@ const Twitter = {
 								twitterObject.push(tempTwitterObject[key]);
 							}
 						);
-						resolve(twitterObject);
+						resolve(
+							Twitter._addStarterText(twitterObject, category)
+						);
+						resolved = true;
 					}
 				}
 			}
 		});
+	},
+	_addStarterText: function (obj, category) {
+		var date = moment().format("DD MMMM");
+		var array = [
+			`Some important ${category} of ${date} in the history!\r\n 👇 A Thread 🧵 👇\r\n\r\n`,
+			`Do you know about the ${category} of ${date} in the history?\r\n👇 A Thread 🧵 👇\r\n`,
+			`Here is the ${category} of ${date} in the history!\r\n👇 A Thread 🧵 👇\r\n`,
+		];
+		const randomElement = array[Math.floor(Math.random() * array.length)];
+		if (typeof obj[0] === "string") {
+			obj[0] = randomElement + obj[0];
+		} else if (typeof obj[0] === "object") {
+			obj[0].text = randomElement + obj[0].text;
+		}
+		return obj;
 	},
 };
 
