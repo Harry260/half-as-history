@@ -1,0 +1,40 @@
+{
+  "name": "half-as-history",
+  "version": "1.0.0",
+  "description": "Twitter bot that posts today-in-history!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harry260/HalfAsHistory.git"
+  },
+  "keywords": [
+    "wikifox",
+    "today-in-history",
+    "half-as-history",
+    "on-this-day",
+    "twitter",
+    "bot",
+    "automation"
+  ],
+  "author": "Harry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harry260/HalfAsHistory/issues"
+  },
+  "homepage": "https://github.com/harry260/HalfAsHistory#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jimp": "^0.16.1",
+    "moment": "^2.29.3",
+    "twitter-api-v2": "^1.12.0",
+    "wikifox": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

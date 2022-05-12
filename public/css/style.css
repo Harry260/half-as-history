@@ -1,0 +1,116 @@
+@import "./fonts.css";
+
+*{
+   border: none;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+}
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+:root{
+   --highlight: #BDFF01;
+   --background: linear-gradient(90.13deg, #181f2e 0%, #181f2e 100%);
+   --hairline: #374151;
+}
+
+body{
+   background: var(--background);
+   height: 100vh;
+}
+
+.wrapper{
+   --padding: 60px;
+   width: calc(100% - var(--padding));
+   height: calc(100vh - var(--padding));
+   box-shadow: rgb(0 0 0 / 56%) 0px 22px 70px 4px;
+   border-radius: 20px;
+}
+
+.center{
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.h-center{
+   display: flex;
+   justify-content: center;
+}
+
+.v-center{
+   display: flex;
+   align-items: center;
+}
+
+.icon-hero{
+   width: 90px;
+   margin-bottom: 15px;
+}
+
+.desc{
+   color: rgba(240, 248, 255, 0.242);
+   font-size: 12px;
+   width: 300px;
+   line-height: 14px;
+   margin-bottom: 10px;
+}
+
+.expand-button{
+   padding: 5px;
+   color: rgba(245, 245, 220, 0.327);
+   cursor: pointer;
+   display: flex;
+}
+
+.expand-text{
+   font-size: 12px;
+   margin-left: 10px;
+   visibility: hidden;
+   opacity: 0;
+   display: none;
+
+}
+
+.expand-button:hover .expand-text{
+   display: block;
+   visibility: visible;
+   opacity: 1;
+}
+
+.expand-button:hover{
+   transform: scale(1.03);
+   margin: 2px;
+   padding: 0 10px;
+   -webkit-background-clip: text !important;
+   -webkit-text-fill-color: transparent !important;
+   -moz-background-clip: text !important;
+   -moz-text-fill-color: transparent !important;
+   
+}
+
+.expand-button:nth-child(1):hover{
+   background:linear-gradient(90.13deg, #38BDF8 0%, #6366F1 100%);
+}
+
+.expand-button:nth-child(2):hover{
+   background:linear-gradient(90.13deg, #4ADE80 0%, #14B4C6 100%);
+}
+
+.expand-button:nth-child(3):hover{
+   background:linear-gradient(90.13deg, #EC4899 0%, #F43F5E 100%);
+}
+
+@media (max-width: 415px) {
+   .desc{
+      width: 100%;
+   }
+   .wrapper{
+      padding: 15px;
+   }
+}
