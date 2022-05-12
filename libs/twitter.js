@@ -113,7 +113,7 @@ const Twitter = {
 		var array = [
 			`Some important ${category} of ${date} in the history!\r\n 👇 A Thread 🧵 👇\r\n\r\n`,
 			`Do you know about the ${category} of ${date} in the history?\r\n👇 A Thread 🧵 👇\r\n`,
-			`Here is the ${category} of ${date} in the history!\r\n👇 A Thread 🧵 👇\r\n`,
+			`Here are the ${category} of ${date} in the history!\r\n👇 A Thread 🧵 👇\r\n`,
 		];
 		const randomElement = array[Math.floor(Math.random() * array.length)];
 		if (typeof obj[0] === "string") {
