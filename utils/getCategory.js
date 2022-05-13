@@ -2,8 +2,8 @@ import moment from "moment";
 
 function getCategory(cb = console.log) {
 	var timing = {
-		"08:00:00-16:00:00": "deaths",
-		"16:00:00-24:00:00": "events",
+		"08:00:00-16:00:00": "events",
+		"16:00:00-24:00:00": "deaths",
 		"00:00:00-08:00:00": "births",
 	};
 
