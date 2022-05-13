@@ -32,5 +32,5 @@ function getCategory(cb = console.log) {
 		}
 	});
 }
-
+getCategory();
 export default getCategory;
