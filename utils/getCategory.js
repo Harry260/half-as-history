@@ -1,9 +1,11 @@
 import moment from "moment";
 
+process.env.TZ = "Asia/Calcutta";
+
 function getCategory(cb = console.log) {
 	var timing = {
-		"08:00:00-16:00:00": "events",
-		"16:00:00-24:00:00": "deaths",
+		"08:00:00-16:00:00": "deaths",
+		"16:00:00-24:00:00": "events",
 		"00:00:00-08:00:00": "births",
 	};
 
