@@ -15,7 +15,7 @@ var availablePlatforms = ["twitter"];
 // For static HTML page
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get(["/create/post/:platform"], (req, res) => {
+app.get(["/create/post/:platform/hah"], (req, res) => {
 	var platforms = availablePlatforms.includes(req.params.platform)
 		? [req.params.platform]
 		: availablePlatforms;
