@@ -115,11 +115,18 @@ const Twitter = {
 			`Do you know about the ${category} of ${date} in the history?\r\n👇 A Thread 🧵 👇\r\n\r\n`,
 			`Here are the ${category} of ${date} in the history!\r\n👇 A Thread 🧵 👇\r\n\r\n`,
 		];
+
+		var hashtag = {
+			birth: "#birth",
+			death: "#death",
+			event: "#event",
+		};
 		const randomElement = array[Math.floor(Math.random() * array.length)];
 		if (typeof obj[0] === "string") {
-			obj[0] = randomElement + obj[0];
+			obj[0] = randomElement + obj[0] + "\n\n" + hashtag[category];
 		} else if (typeof obj[0] === "object") {
-			obj[0].text = randomElement + obj[0].text;
+			obj[0].text =
+				randomElement + obj[0].text + "\n\n" + hashtag[category];
 		}
 		return obj;
 	},
